@@ -1,138 +1,279 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>For Arsh 💙</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arshie's Exam Survival Kit 💙</title>
 
 <style>
-
 body{
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#dff8ff,#fff5e6);
-text-align:center;
-padding:20px;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#dff6ff,#f7fbff,#eaf4ff);
+  color:#233;
+  text-align:center;
 }
-
-.container{
-max-width:900px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:25px;
-box-shadow:0 0 20px rgba(0,0,0,.1);
+section{
+  max-width:1000px;
+  margin:30px auto;
+  padding:25px;
 }
-
+.card{
+  background:white;
+  border-radius:28px;
+  padding:28px;
+  box-shadow:0 12px 35px rgba(70,130,180,.18);
+}
 h1{
-color:#4a9dc4;
+  color:#327ca6;
+  font-size:2.5rem;
 }
-
+h2{
+  color:#3d91bd;
+}
+p{
+  font-size:1.1rem;
+  line-height:1.7;
+}
 .hero{
-width:100%;
-max-width:500px;
-border-radius:20px;
+  width:90%;
+  max-width:520px;
+  border-radius:28px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
-
+.bubu{
+  width:230px;
+  border-radius:20px;
+}
 button{
-background:#89d4f0;
-border:none;
-padding:15px 25px;
-border-radius:999px;
-font-size:18px;
-cursor:pointer;
-margin-top:20px;
+  border:none;
+  background:#8bd3f7;
+  color:#123;
+  padding:14px 22px;
+  border-radius:999px;
+  margin:8px;
+  font-size:1rem;
+  cursor:pointer;
+  box-shadow:0 6px 15px rgba(0,0,0,.12);
 }
-
 button:hover{
-transform:scale(1.05);
+  transform:scale(1.06);
 }
-
 #message{
-margin-top:20px;
-font-size:22px;
-font-weight:bold;
-color:#44718c;
+  margin-top:18px;
+  font-size:1.3rem;
+  font-weight:bold;
+  color:#2c6f91;
 }
-
 .progress{
-width:80%;
-height:30px;
-background:#eee;
-margin:20px auto;
-border-radius:999px;
-overflow:hidden;
+  width:85%;
+  height:28px;
+  background:#e8f2f7;
+  border-radius:999px;
+  margin:20px auto;
+  overflow:hidden;
 }
-
-.bar{
-height:100%;
-width:0%;
-background:#7fd6b8;
-transition:1s;
+#bar{
+  width:0%;
+  height:100%;
+  background:linear-gradient(90deg,#8bd3f7,#a8e6cf);
+  transition:.5s;
 }
-
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+}
+.polaroid{
+  background:white;
+  padding:12px;
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  transform:rotate(-1deg);
+}
+.polaroid:nth-child(even){
+  transform:rotate(1.5deg);
+}
+.polaroid img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  border-radius:14px;
+}
+.caption{
+  font-size:.95rem;
+  color:#527;
+  margin-top:8px;
+}
+.secret{
+  display:none;
+  margin-top:20px;
+  background:#eef9ff;
+  padding:20px;
+  border-radius:20px;
+}
+.float{
+  position:fixed;
+  top:-20px;
+  animation:fall 4s linear forwards;
+  pointer-events:none;
+}
+@keyframes fall{
+  to{transform:translateY(110vh);opacity:0;}
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<section class="card">
+  <h1>Arshie's Exam Survival Kit 💙</h1>
+  <p>
+    Arshie, I know you've been tired and burnt out lately.
+    I hope this little website reminds you how amazing you are.
+  </p>
 
-<h1>🌷 Arsh's Exam Survival Corner 🌷</h1>
+  <img class="hero" src="IMG_0319.jpeg" alt="Arshie and me">
 
-<p>
-Hi Arsh 💙
-</p>
+  <p>
+    SFU midterms are stressful, but you are smarter, stronger, and more capable
+    than the stress in your head is making you feel right now.
+  </p>
+</section>
 
-<p>
-I know you've been working incredibly hard lately.
-This is just a tiny corner of the internet made to remind you that you're amazing.
-</p>
+<section class="card">
+  <h2>🐻 Bubu & Dudu Support Squad</h2>
+  <p>They have officially arrived to protect the vibes.</p>
 
-<img src="hero.jpg" class="hero">
+  <img class="bubu" src="25C95891-EC78-4886-BEFE-9C31.png" alt="Bubu Dudu">
 
-<h2>Defeat the Exam Stress Monster 👹</h2>
+  <br>
+  <button onclick="motivate()">Give Arshie motivation ✨</button>
+  <button onclick="arshieMode()">Emergency Arshie Button 🚨</button>
 
-<div class="progress">
-<div class="bar" id="bar"></div>
-</div>
+  <div id="message"></div>
+</section>
 
-<button onclick="fightMonster()">
-Give Arsh Motivation ✨
-</button>
+<section class="card">
+  <h2>👹 Defeat the Midterm Stress Monster</h2>
+  <p>Every click gives Arshie more power.</p>
 
-<div id="message"></div>
+  <div class="progress">
+    <div id="bar"></div>
+  </div>
 
-</div>
+  <button onclick="fightMonster()">Fight stress 💪</button>
+</section>
+
+<section class="card">
+  <h2>📸 Tiny Scrapbook</h2>
+
+  <div class="gallery">
+    <div class="polaroid">
+      <img src="IMG_0078.jpeg">
+      <div class="caption">Drip maintained ✅</div>
+    </div>
+
+    <div class="polaroid">
+      <img src="IMG_0080.jpeg">
+      <div class="caption">Main character energy</div>
+    </div>
+
+    <div class="polaroid">
+      <img src="IMG_0218.jpeg">
+      <div class="caption">Blue cozy vibes 💙</div>
+    </div>
+
+    <div class="polaroid">
+      <img src="IMG_1307.png">
+      <div class="caption">Arshie being Arshie</div>
+    </div>
+
+    <div class="polaroid">
+      <img src="IMG_0381.png">
+      <div class="caption">Us walking into exam season</div>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>🎁 Final Secret Note</h2>
+  <button onclick="showSecret()">Open after studying for 25 minutes</button>
+
+  <div class="secret" id="secret">
+    <p>
+      No matter how these midterms go, I’m proud of you Arshie.
+      You’ve been pushing through even when you’re exhausted, and that itself
+      says so much about you.
+    </p>
+    <p>
+      Take a deep breath. One lecture, one page, one question at a time.
+      You’ve got this. 💙
+    </p>
+  </div>
+</section>
 
 <script>
-
 let progress = 0;
 
-const messages = [
-"You've got this 💙",
-"One question at a time 🌷",
-"Bubu and Dudu believe in you 🐻",
-"Your hard work matters ✨",
-"Take a deep breath ☁️",
-"You're stronger than exam stress 💪"
+const motivation = [
+  "You’ve got this, Arshie 💙",
+  "One question at a time. One breath at a time.",
+  "Drip ni kharab honi chahiye 😤",
+  "Bubu and Dudu believe in you 🐻",
+  "You are stronger than midterm stress.",
+  "Rest is allowed. You’re still doing amazing.",
+  "AREEYYY YAAARRRRR — but make it academic comeback season."
 ];
 
+function motivate(){
+  document.getElementById("message").innerText =
+    motivation[Math.floor(Math.random()*motivation.length)];
+  sparkles();
+}
+
+function arshieMode(){
+  const lines = [
+    "areeyy yaaaarrrrr 😭",
+    "drip ni kharab honi chahiye 😤",
+    "bhraachod... okay back to studying 💙"
+  ];
+  document.getElementById("message").innerText =
+    lines[Math.floor(Math.random()*lines.length)];
+  sparkles();
+}
+
 function fightMonster(){
+  if(progress < 100){
+    progress += 20;
+    document.getElementById("bar").style.width = progress + "%";
+    document.getElementById("message").innerText =
+      "Stress monster weakened by " + progress + "% 💪";
+  }
 
-if(progress < 100){
-progress += 20;
-document.getElementById("bar").style.width =
-progress + "%";
+  if(progress >= 100){
+    document.getElementById("message").innerText =
+      "🎉 Stress monster defeated. Arshie wins. Midterms have no chance.";
+    sparkles();
+  }
 }
 
-document.getElementById("message").innerHTML =
-messages[Math.floor(Math.random()*messages.length)];
-
-if(progress >= 100){
-document.getElementById("message").innerHTML =
-"🎉 Exam Stress Monster Defeated! Arsh wins! 🎉";
+function showSecret(){
+  document.getElementById("secret").style.display = "block";
+  sparkles();
 }
 
+function sparkles(){
+  for(let i=0;i<25;i++){
+    let s=document.createElement("div");
+    s.className="float";
+    s.innerText=["💙","✨","🐻","🌷","☁️"][Math.floor(Math.random()*5)];
+    s.style.left=Math.random()*100+"vw";
+    s.style.fontSize=(18+Math.random()*18)+"px";
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),4000);
+  }
 }
-
 </script>
 
 </body>
