@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Arsh 💙</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#dff8ff,#fff5e6);
+text-align:center;
+padding:20px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:25px;
+box-shadow:0 0 20px rgba(0,0,0,.1);
+}
+
+h1{
+color:#4a9dc4;
+}
+
+.hero{
+width:100%;
+max-width:500px;
+border-radius:20px;
+}
+
+button{
+background:#89d4f0;
+border:none;
+padding:15px 25px;
+border-radius:999px;
+font-size:18px;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+#message{
+margin-top:20px;
+font-size:22px;
+font-weight:bold;
+color:#44718c;
+}
+
+.progress{
+width:80%;
+height:30px;
+background:#eee;
+margin:20px auto;
+border-radius:999px;
+overflow:hidden;
+}
+
+.bar{
+height:100%;
+width:0%;
+background:#7fd6b8;
+transition:1s;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌷 Arsh's Exam Survival Corner 🌷</h1>
+
+<p>
+Hi Arsh 💙
+</p>
+
+<p>
+I know you've been working incredibly hard lately.
+This is just a tiny corner of the internet made to remind you that you're amazing.
+</p>
+
+<img src="hero.jpg" class="hero">
+
+<h2>Defeat the Exam Stress Monster 👹</h2>
+
+<div class="progress">
+<div class="bar" id="bar"></div>
+</div>
+
+<button onclick="fightMonster()">
+Give Arsh Motivation ✨
+</button>
+
+<div id="message"></div>
+
+</div>
+
+<script>
+
+let progress = 0;
+
+const messages = [
+"You've got this 💙",
+"One question at a time 🌷",
+"Bubu and Dudu believe in you 🐻",
+"Your hard work matters ✨",
+"Take a deep breath ☁️",
+"You're stronger than exam stress 💪"
+];
+
+function fightMonster(){
+
+if(progress < 100){
+progress += 20;
+document.getElementById("bar").style.width =
+progress + "%";
+}
+
+document.getElementById("message").innerHTML =
+messages[Math.floor(Math.random()*messages.length)];
+
+if(progress >= 100){
+document.getElementById("message").innerHTML =
+"🎉 Exam Stress Monster Defeated! Arsh wins! 🎉";
+}
+
+}
+
+</script>
+
+</body>
+</html>
